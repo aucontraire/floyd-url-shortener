@@ -15,9 +15,17 @@
             var url = $("#inputbox").val();
             $.ajax({
                 type: "GET",
-                url: "http://18.188.185.207/api/v1/create/" + url
+                url: "http://18.188.185.207/api/v1/create/" + url,
+                success: searchSuccess,
+                dataType: "json"
             });
         });
+        function searchSuccess(data, textStatus, jqXHR) {
+            var output = data['short_url'];
+            var url_pre = 'http://pipehorse.holberton.us/';
+            $("#output").html(url_pre + output);
+            console.log(data['short_url']);
+        }
     });
     </script>
 
