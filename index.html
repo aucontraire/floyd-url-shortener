@@ -12,11 +12,11 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#shortener").click(function(){
-            $.get("example", function(data, status){
-                $("#output").html(url);
+            var url = $("#inputbox").val();
+            $.ajax({
+                type: "GET",
+                url: "http://18.188.185.207/api/v1/create/" + url
             });
-/*      var url = $("#inputbox").val();
-        $("#output").html(url);  */
         });
     });
     </script>
