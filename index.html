@@ -3,16 +3,25 @@
 
   <head>
     <title>Flo-yd URL Shortener</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   </head>
-  <script type="text/javascript">
-    $("#shortener").click(function(){
-    var shortURL = $("#inputbox").val();
-    $("#output").html(shortURL);
-    });
-  </script>
   <body>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#shortener").click(function(){
+            $.get("example", function(data, status){
+                $("#output").html(url);
+            });
+/*      var url = $("#inputbox").val();
+        $("#output").html(url);  */
+        });
+    });
+    </script>
+
+  </script>
     <header>
       <div class="logo"></div>
     </header>
@@ -39,8 +48,8 @@
     <div class="row inputdiv">
       <div class="col-md-12">
         <input type="text" id="inputbox"></input>
-        <button id="shortener">Shorten</button>
-        <p id="output">Your Short URL: </p>
+        <button id="shortener">Submit</button>
+        <p id="output"></p>
       </div>
     </div>
     <footer>
