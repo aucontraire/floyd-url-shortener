@@ -16,7 +16,23 @@ def do_it(short_url):
         abort(403)
     return redirect("http://{}".format(original_url.original))
 
-@app_views.route('/create/<original_url>')
+@app_views.route('/create', strict_slashes=False,
+                 methods=['POST'])
+def create_with_post():
+    name_dict = request.get_json()
+    try:
+        original_url = name_dict['original']
+    except KeyError:
+        abort(404)
+    short_url = Url()
+    setattr(short_url, "original", original_url)
+    setattr(short_url, "short_url", hashfunc())
+    models.storage.new(short_url)
+    models.storage.save()
+    return jsonify(short_url.to_dict())
+
+@app_views.route('/create/<original_url>', strict_slashes=False,
+                 methods=['GET'])
 def make_it(original_url):
     short_url = Url()
     setattr(short_url, "original", original_url)
