@@ -15,12 +15,15 @@ Thank you for visiting our URL shortener project, Floyd. Our web application all
 
 ## Environment
 
-* Flask - Gets access token
-* Nginx - SSL Certification to serve HTTPS content
-* UFW - firewall
-* Any web browser
+* Flask - Gets access
+* JQuery
+* HTML/CSS
+* Nginx - Web Server
+* Bootstrap
+* UFW - Firewall
 * Python3 (v3.4.3)
 * Ubuntu (v14.04 LTS)
+* Any web browser
 
 ## Usage
 
