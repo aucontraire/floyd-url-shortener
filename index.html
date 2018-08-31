@@ -8,28 +8,40 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   </head>
   <body>
+<script async src=“https://platform.twitter.com/widgets.js” charset=“utf-8”></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $("#shortener").click(function(){
             var url = $("#inputbox").val();
             $.ajax({
-                type: "GET",
-                url: "http://18.188.185.207/api/v1/create/" + url,
+                type: "POST",
+                url_long: "http://pyh.tw/create/",
+                data:
+                    {
+                        "original": url
+                    },
                 success: searchSuccess,
                 dataType: "json"
             });
         });
         function searchSuccess(data, textStatus, jqXHR) {
             var output = data['short_url'];
-            var url_pre = 'http://pipehorse.holberton.us/';
+            var url_pre = 'pyh.tw/';
+            var return_url = url_pre + output;
             $("#output").html(url_pre + output);
+            $("output").attr("href", return_url);
             console.log(data['short_url']);
         }
     });
     </script>
-
-  </script>
+    <script>(function(d, s, id) {
+    var js, = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = ’https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
+   .parentNode.insertBefore(js,);
+    }(document, ‘script’, ‘facebook-jssdk’));</script>
     <header>
       <div class="logo"></div>
     </header>
@@ -62,6 +74,9 @@
       </div>
     </div>
     <footer>
+        <a href=“https://twitter.com/pipehorse?ref_src=twsrc%5Etfw” class=“twitter-follow-button” data-show-count=“false”>Follow @pipehorse</a>
+    <div id=“fb-root”></div>
+            <div class=“fb-like” data-href=“https://www.facebook.com/pipehorse” data-layout=“button_count” data-action=“like” data-size=“small” data-show-faces=“false” data-share=“false”></div>   
       &copy; Flo-yd URL Shortener
     </footer>
   </body>
