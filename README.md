@@ -35,4 +35,26 @@ Use a web browser to go to the home page and type in the URL that you would like
 
 ## Credits
 
-- All of us : [contributors](https://github.com/aucontraire/floyd-url-shortener/contributors)
+- Everyone: [contributors](https://github.com/aucontraire/floyd-url-shortener/contributors)
+
+- Afa Madza: https://github.com/AfaMadza
+
+- Omar Contreras: https://github.com/aucontraire
+
+- Isaac Wong: https://github.com/thirdcaptain
+
+- John Dinh: https://github.com/koukijohn
+
+- Germaine Balmania: https://github.com/GucciGerm
+
+- Lisa Olson: https://github.com/lisaolson
+
+- Mitali Sengupta: https://github.com/MitaliSengupta
+
+- Derek Kwok: https://github.com/dkwok94
+
+- Adekunle Adeniran: https://github.com/flourishcodes
+
+- Madison Burke: https://github.com/RocketHTML
+
+- Miranda Evans: https://github.com/mirandarevans
