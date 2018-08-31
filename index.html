@@ -6,7 +6,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   </head>
-
+  <script type="text/javascript">
+    $("#shortener").click(function(){
+    var shortURL = $("#inputbox").val();
+    $("#output").html(shortURL);
+    });
+  </script>
   <body>
     <header>
       <div class="logo"></div>
@@ -34,8 +39,8 @@
     <div class="row inputdiv">
       <div class="col-md-12">
         <input type="text" id="inputbox"></input>
-        <button>Shorten</button>
-        <p>My Output</p>
+        <button id="shortener">Shorten</button>
+        <p id="output">Your Short URL: </p>
       </div>
     </div>
     <footer>
