@@ -61,3 +61,5 @@ Use a web browser to go to the home page and type in the URL that you would like
 - Madison Burke: https://github.com/RocketHTML
 
 - Miranda Evans: https://github.com/mirandarevans
+
+- Arik Rosenthal: https://github.com/aDENTinTIME
