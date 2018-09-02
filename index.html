@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+ <meta charset="utf-8">
 
   <head>
     <title>Flo-yd URL Shortener</title>
@@ -8,15 +9,15 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   </head>
   <body>
-<script async src=“https://platform.twitter.com/widgets.js” charset=“utf-8”></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $("#shortener").click(function(){
-            var url = $("#inputbox").val();
+          var url = $("#inputbox").val();
             $.ajax({
-                type: "POST",
-                url_long: "http://pyh.tw/create/",
+                type: "GET",
+                url: "http://pyh.tw/create/" + url,
                 data:
                     {
                         "original": url
@@ -25,28 +26,19 @@
                 dataType: "json"
             });
         });
-        function searchSuccess(data, textStatus, jqXHR) {
+      function searchSuccess(data, textStatus, jqXHR) {
             var output = data['short_url'];
             var url_pre = 'pyh.tw/';
             var return_url = url_pre + output;
-            $("#output").html(url_pre + output);
-            $("output").attr("href", return_url);
-            console.log(data['short_url']);
+            $("#output").html(url_pre + output).attr("href", "http://" + return_url);
         }
     });
     </script>
-    <script>(function(d, s, id) {
-    var js, = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = ’https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1';
-   .parentNode.insertBefore(js,);
-    }(document, ‘script’, ‘facebook-jssdk’));</script>
     <header>
       <div class="logo"></div>
     </header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <img id="floyd_logo" src="floyd_logo.png">
+      <img id="floyd_logo" src="https://i.imgur.com/VrbrO2X.png">
       <a class="navbar-brand" href="/">Floyd</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,12 +49,6 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
         </ul>
       </div>
     </nav>
@@ -70,13 +56,13 @@
       <div class="col-md-12">
         <input type="text" id="inputbox"></input>
         <button id="shortener">Submit</button>
-        <a id="output" href=""></a>
+        <a id="output" href="" target="_blank"></a>
       </div>
     </div>
     <footer>
-        <a href=“https://twitter.com/pipehorse?ref_src=twsrc%5Etfw” class=“twitter-follow-button” data-show-count=“false”>Follow @pipehorse</a>
-    <div id=“fb-root”></div>
-            <div class=“fb-like” data-href=“https://www.facebook.com/pipehorse” data-layout=“button_count” data-action=“like” data-size=“small” data-show-faces=“false” data-share=“false”></div>   
+      <a href="https://twitter.com/pipehorse?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @pipehorse</a>
+    <div id="fb-root"></div>
+    <div class="fb-like" data-href="https://www.facebook.com/pipehorse" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>   
       &copy; Flo-yd URL Shortener
     </footer>
   </body>
